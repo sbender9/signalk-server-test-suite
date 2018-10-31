@@ -18,9 +18,12 @@
 const chai = require('chai')
 const expect = chai.expect
 const chaiHttp = require('chai-http');
+const schema = require('@signalk/signalk-schema')
+
 const { getHttpURL, getAPIPath, config } = require('./utils')
 
-chai.use(chaiHttp);
+chai.use(chaiHttp)
+chai.use(schema.chaiModule)
 
 describe('REST API', () => {
 
@@ -28,18 +31,7 @@ describe('REST API', () => {
     it('Hello Message', async () => {
       let response = await chai.request(getHttpURL()).get('/signalk')
       expect(response).to.have.status(200)
-      expect(response.body).to.be.a('object')
-      
-      const server = response.body.server
-      expect(server, 'hello.server').to.be.a('object')
-      expect(server.id, 'hello.server.id').to.be.a('string')
-      expect(server.version, 'hello.server.version').to.be.a('string')
-      
-      expect(response.body.endpoints, 'hello.endpoints').to.be.a('object')
-      expect(response.body.endpoints.v1, 'hello.endpoints.v1').to.be.a('object')
-      
-      const v1 = response.body.endpoints.v1
-      expect(v1.version).to.be.a('string')
+      expect(response.body).to.be.validDiscovery
     })
   }
 })

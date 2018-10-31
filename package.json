@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/sbender9/signalk-server-test-suite#readme",
   "dependencies": {
+    "@signalk/signalk-schema": "^1.1.1",
     "chai": "^4.2.0",
     "chai-http": "^4.2.0",
     "chai-things": "^0.2.0",
