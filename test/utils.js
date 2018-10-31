@@ -25,6 +25,6 @@ module.exports = {
   },
     
   getAPIPath: function(path) {
-    return '/' + api + path
+    return api + path
   }
 }

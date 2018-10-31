@@ -28,10 +28,16 @@ chai.use(schema.chaiModule)
 describe('REST API', () => {
 
   if ( config.supportsHTTP ) {
-    it('Hello Message', async () => {
+    it('Discovery', async () => {
       let response = await chai.request(getHttpURL()).get('/signalk')
       expect(response).to.have.status(200)
       expect(response.body).to.be.validDiscovery
+    })
+
+    it('Full', async () => {
+      let response = await chai.request(getHttpURL()).get(getAPIPath('/'))
+      expect(response).to.have.status(200)
+      expect(response.body).to.be.validFullSignalK
     })
   }
 })
