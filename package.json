@@ -1,0 +1,25 @@
+{
+  "name": "signalk-server-test-suite",
+  "version": "0.0.1",
+  "description": "SignalK Server Test Suite",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sbender9/signalk-server-test-suite.git"
+  },
+  "author": "Scott Bender",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/sbender9/signalk-server-test-suite/issues"
+  },
+  "homepage": "https://github.com/sbender9/signalk-server-test-suite#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
+    "chai-things": "^0.2.0",
+    "mocha": "^5.2.0"
+  }
+}
